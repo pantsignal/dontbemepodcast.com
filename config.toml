@@ -3,7 +3,16 @@ languageCode = "en-us"
 title = "Don't Be Me Podcast"
 theme = "dontbeme"
 relativeURLs = true
+disableKinds = ["section","taxonomy","taxonomyTerm","RSS","404","sitemap"]
 
 
 [params]
 contact = "paul@dontbemepodcast.com"
+googlesub = ""
+spotifysub = ""
+stitchersub = ""
+podbeansub = ""
+applesub = ""
+alexasub = ""
+rsssub = ""
+reddit = ""
