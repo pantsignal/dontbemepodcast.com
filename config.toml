@@ -1,0 +1,9 @@
+baseURL = "localhost:1313/"
+languageCode = "en-us"
+title = "Don't Be Me Podcast"
+theme = "dontbeme"
+relativeURLs = true
+
+
+[params]
+contact = "paul@dontbemepodcast.com"

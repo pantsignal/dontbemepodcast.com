@@ -1,0 +1,26 @@
+<div class="w3-content w3-justify w3-text-orange" id="latest">
+    <h2 class="w3-text-orange">Latest Episode</h2>
+    <h3 class="w3-text-orange">
+        Episode # 
+        {{ range first 1 .Pages}}
+            {{.Params.episodeNumber}}
+        {{end}}
+         - 
+        {{ range first 1 .Pages}}
+            {{.Params.title}}
+        {{end}}
+        - 
+        {{ range first 1 .Pages}}
+        {{ .Date.Format "January 2, 2006" }}
+        {{end}}
+    </h3>
+    <p class="w3-text-orange">
+        {{ range first 1 .Pages}}
+            {{.Content}}
+        {{end}}
+    </p>
+    <audio controls>
+        <source src="{{ range first 1 .Pages}}{{.Params.epURL}}{{end}}" type="audio/mpeg">
+        <p>Your browser doesn't support HTML5 audio. Here is a <a href="myAudio.mp4">link to the audio</a> instead.</p>
+    </audio>
+</div>
