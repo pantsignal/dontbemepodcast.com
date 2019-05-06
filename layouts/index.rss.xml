@@ -1,0 +1,58 @@
+<rss version="2.0"
+   xmlns:content="http://purl.org/rss/1.0/modules/content/"
+   xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:atom="http://www.w3.org/2005/Atom"
+   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+   xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>{{ .Title }}</title>
+    <link>{{ .Site.BaseURL }}</link>
+    <atom:link href="{{ .Site.BaseURL }}index.xml" rel="self" type="application/rss+xml" />
+    <language>{{ .Site.Params.language }}</language>
+    <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
+    <copyright>{{ .Site.Params.copyright }}</copyright>
+    <managingEditor>{{ .Site.Params.email }} ({{ .Site.Params.realname }})</managingEditor>
+    <pubDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</pubDate>
+    <itunes:subtitle>{{ .Site.Params.subtitle }}</itunes:subtitle>
+    <itunes:author>{{ .Site.Params.itunesAuthor }}</itunes:author>
+    <itunes:summary>{{ .Site.Params.itunesSummary | plainify }}</itunes:summary>
+    <description>{{ .Site.Params.description | plainify }}</description>
+    <itunes:owner>
+      <itunes:name>{{ .Site.Params.itunesAuthor }}</itunes:name>
+      <itunes:email>{{ .Site.Params.email }}</itunes:email>
+    </itunes:owner>
+    <itunes:image href="{{.Site.BaseURL}}{{ .Site.Params.podcastImageURL }}" />
+    <itunes:category text="{{ .Site.Params.itunesCategory }}"/>
+    <itunes:explicit>yes</itunes:explicit>
+    <generator>Hugo -- gohugo.io</generator>
+    {{- $pages := .Data.Pages -}}
+    {{- $limit := .Site.Config.Services.RSS.Limit -}}
+    {{- if ge $limit 1 -}}
+    {{- $pages = $pages | first $limit -}}
+    {{- end -}}
+    {{- range $pages -}}
+    <item>
+      <guid>{{.Site.BaseURL}}{{ .Params.audioFile }}</guid>
+      <title>{{ title .Params.title }}</title>
+      <link>{{ .Permalink }}</link>
+      {{ printf "<description><![CDATA[%s]]></description>" .Content | safeHTML }}
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
+      <enclosure url="{{.Site.BaseURL}}{{ .Params.audioFile }}" length="{{ .Params.length }}" type="audio/mp3" />
+      <itunes:author>{{ .Site.Params.itunesAuthor }}</itunes:author>
+      <itunes:summary>{{ .Summary | plainify }}</itunes:summary>
+      <itunes:image href="{{.Site.BaseURL}}{{ .Site.Params.podcastImageURL }}" />
+      {{ printf "<content:encoded><![CDATA[%s]]></content:encoded>" .Content | safeHTML }}
+      {{- if .Params.tags -}}
+        <itunes:keywords>
+          {{- range $index, $key:= .Params.tags -}}
+            {{- if $index }}, {{ end -}}
+            {{- if gt (len $key) 0 }}{{ $key }}{{ end -}}
+          {{- end -}}
+        </itunes:keywords>
+      {{- end -}}
+    </item>
+    {{ end }}
+  </channel>
+</rss>
