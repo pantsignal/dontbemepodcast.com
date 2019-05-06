@@ -19,7 +19,7 @@
             {{.Content}}
         {{end}}
     </p>
-    <audio controls>
+    <audio controls style="width: 90%;">
         <source src="{{ range first 1 .Pages}}{{.Params.audioFile}}{{end}}" type="audio/mpeg">
         <p>Your browser doesn't support HTML5 audio. Here is a <a href="myAudio.mp4">link to the audio</a> instead.</p>
     </audio>
