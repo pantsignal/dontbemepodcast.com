@@ -23,4 +23,5 @@
         <source src="{{ range first 1 .Pages}}{{.Params.audioFile}}{{end}}" type="audio/mpeg">
         <p>Your browser doesn't support HTML5 audio. Here is a <a href="myAudio.mp4">link to the audio</a> instead.</p>
     </audio>
+    <a href="{{ range first 1 .Pages}}{{.Params.audioFile}}{{end}}" download="{{ range first 1 .Pages}}{{.Params.audioFile}}{{end}}" class="w3-btn w3-orange">Download Episode {{.Params.episodeNumber}}</a>
 </div>
