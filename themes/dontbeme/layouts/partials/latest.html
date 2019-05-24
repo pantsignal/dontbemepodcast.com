@@ -2,20 +2,20 @@
     <h2 class="w3-text-orange">Latest Episode</h2>
     <h3 class="w3-text-orange">
         Episode # 
-        {{ range first 1 .Pages}}
+        {{ with .Site.GetPage "ep002"}}
             {{.Params.episodeNumber}}
         {{end}}
          - 
-        {{ range first 1 .Pages}}
-            {{.Params.title}}
+        {{ with .Site.GetPage "ep002"}}
+            {{.Params.description}}
         {{end}}
         - 
-        {{ range first 1 .Pages}}
-        {{ .Date.Format "January 2, 2006" }}
+        {{ with .Site.GetPage "ep002"}}
+            {{ .Date.Format "January 2, 2006" }}
         {{end}}
     </h3>
     <p class="w3-text-orange">
-        {{ range first 1 .Pages}}
+        {{ with .Site.GetPage "ep002"}}
             {{.Content}}
         {{end}}
     </p>
