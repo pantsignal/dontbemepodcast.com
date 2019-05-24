@@ -15,10 +15,10 @@
             </a>
         </div>*/}}
         <div class="w3-half">
-            <div class="w3-display-container">
+            <div class="w3-display-container" style="border: 1px solid orange;">
                 <a href="ep001">
-                    <img src="img/ituneslogo.png" alt="Episode 1" style="width:100%" class="w3-opacity">
-                    <div class="w3-display-bottommiddle w3-container w3-text-orange" style="font-size: 24px">
+                    <img src="img/episode.png" alt="Episode 1" style="width:100%" class="w3-opacity-max">
+                    <div class="w3-display-middle w3-container w3-text-orange" style="font-size: 24px">
                         Episode # 
                         {{ with .Site.GetPage "ep001"}}
                             {{.Params.episodeNumber}}
@@ -26,6 +26,10 @@
                             - 
                         {{ with .Site.GetPage "ep001"}}
                             {{.Params.description}}
+                        {{end}}
+                        - 
+                        {{ with .Site.GetPage "ep001"}}
+                            {{.Params.length}}
                         {{end}}
                     </div>
                 </a>
