@@ -3,97 +3,84 @@
     <hr style="width:200px" class="w3-opacity">
     <!-- Grid for episodes -->
     <div class="w3-row-padding" style="margin:0 -16px">
-        <!-- Begin episode -->
-        <div class="w3-half">
-            <div class="w3-display-container" style="border: 1px solid orange;">
-                <a href="ep004">
-                    <img src="img/episode.png" alt="Episode 4" style="width:100%" class="w3-opacity-max">
-                    <div class="w3-display-middle w3-container w3-text-orange" style="font-size: 24px">
-                        Episode # 
-                        {{ with .Site.GetPage "ep004"}}
-                            {{.Params.episodeNumber}}
-                        {{end}}
-                            - 
-                        {{ with .Site.GetPage "ep004"}}
-                            {{.Params.description}}
-                        {{end}}
-                        - 
-                        {{ with .Site.GetPage "ep004"}}
-                            {{.Params.length}}
-                        {{end}}
-                    </div>
-                </a>
-            </div>
-        <!-- End episode -->
-    </div>
-    <div class="w3-row-padding" style="margin:0 -16px">
-        <!-- Begin episode -->
-        <div class="w3-half">
-            <div class="w3-display-container" style="border: 1px solid orange;">
-                <a href="ep003">
-                    <img src="img/episode.png" alt="Episode 1" style="width:100%" class="w3-opacity-max">
-                    <div class="w3-display-middle w3-container w3-text-orange" style="font-size: 24px">
-                        Episode # 
-                        {{ with .Site.GetPage "ep003"}}
-                            {{.Params.episodeNumber}}
-                        {{end}}
-                            - 
-                        {{ with .Site.GetPage "ep003"}}
-                            {{.Params.description}}
-                        {{end}}
-                        - 
-                        {{ with .Site.GetPage "ep003"}}
-                            {{.Params.length}}
-                        {{end}}
-                    </div>
-                </a>
-            </div>
-        <!-- End episode -->
-    </div>
-    <div class="w3-row-padding" style="margin:0 -16px">
-        <!-- Begin episode -->
-        <div class="w3-half">
-            <div class="w3-display-container" style="border: 1px solid orange;">
-                <a href="ep002">
-                    <img src="img/episode.png" alt="Episode 1" style="width:100%" class="w3-opacity-max">
-                    <div class="w3-display-middle w3-container w3-text-orange" style="font-size: 24px">
-                        Episode # 
-                        {{ with .Site.GetPage "ep002"}}
-                            {{.Params.episodeNumber}}
-                        {{end}}
-                            - 
-                        {{ with .Site.GetPage "ep002"}}
-                            {{.Params.description}}
-                        {{end}}
-                        - 
-                        {{ with .Site.GetPage "ep002"}}
-                            {{.Params.length}}
-                        {{end}}
-                    </div>
-                </a>
-            </div>
-        <!-- End episode -->
-    </div>
-        <div class="w3-half">
-            <div class="w3-display-container" style="border: 1px solid orange;">
-                <a href="ep001">
-                    <img src="img/episode.png" alt="Episode 1" style="width:100%" class="w3-opacity-max">
-                    <div class="w3-display-middle w3-container w3-text-orange" style="font-size: 24px">
-                        Episode # 
-                        {{ with .Site.GetPage "ep001"}}
-                            {{.Params.episodeNumber}}
-                        {{end}}
-                            - 
-                        {{ with .Site.GetPage "ep001"}}
-                            {{.Params.description}}
-                        {{end}}
-                        - 
-                        {{ with .Site.GetPage "ep001"}}
-                            {{.Params.length}}
-                        {{end}}
-                    </div>
-                </a>
-            </div>
+        <table class="w3-table w3-text-orange w3-card-4 w3-hoverable" style="border: 1px solid orange;">
+            <tr class="w3-transparent">
+                <th>Episode #</th>
+                <th>Description</th>
+                <th>Length</th>
+            </tr>
+            <tr class="w3-hover-green" data-href="ep004">
+                <td>
+                    {{ with .Site.GetPage "ep004"}}
+                        {{.Params.episodeNumber}}
+                    {{end}}
+                </td>
+                <td>
+                    {{ with .Site.GetPage "ep004"}}
+                        {{.Params.description}}
+                    {{end}}
+                </td>
+                <td>
+                    {{ with .Site.GetPage "ep004"}}
+                        {{.Params.length}}
+                    {{end}}
+                </td>
+            </tr>
+
+            <tr class="w3-hover-green" data-href="ep003">
+                <td>
+                    {{ with .Site.GetPage "ep003"}}
+                        {{.Params.episodeNumber}}
+                    {{end}}
+                </td>
+                <td>
+                    {{ with .Site.GetPage "ep003"}}
+                        {{.Params.description}}
+                    {{end}}
+                </td>
+                <td>
+                    {{ with .Site.GetPage "ep003"}}
+                        {{.Params.length}}
+                    {{end}}
+                </td>
+            </tr>
+
+            <tr class="w3-hover-green" data-href="ep002">
+                <td>
+                    {{ with .Site.GetPage "ep002"}}
+                        {{.Params.episodeNumber}}
+                    {{end}}
+                </td>
+                <td>
+                    {{ with .Site.GetPage "ep002"}}
+                        {{.Params.description}}
+                    {{end}}
+                </td>
+                <td>
+                    {{ with .Site.GetPage "ep002"}}
+                        {{.Params.length}}
+                    {{end}}
+                </td>
+            </tr>
+
+            <tr class="w3-hover-green" data-href="ep001">
+                <td>
+                    {{ with .Site.GetPage "ep001"}}
+                        {{.Params.episodeNumber}}
+                    {{end}}
+                </td>
+                <td>
+                    {{ with .Site.GetPage "ep001"}}
+                        {{.Params.description}}
+                    {{end}}
+                </td>
+                <td>
+                    {{ with .Site.GetPage "ep001"}}
+                        {{.Params.length}}
+                    {{end}}
+                </td>
+            </tr>
+        </table>
         <!-- End episodes grid -->
     </div>
     <!-- End Portfolio Section -->

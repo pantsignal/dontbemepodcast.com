@@ -1498,7 +1498,8 @@ a {
 .w3-green,
 .w3-hover-green:hover {
 	color: #fff!important;
-	background-color: #4CAF50!important
+	background-color: #4CAF50!important;
+	cursor: pointer;
 }
 
 .w3-light-green,
